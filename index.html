@@ -7,23 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/animate.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+        </script>
 </head>
 
 <body>
-    <div id="pokedex">
-        <div class="img">
+    <div class="animated rubberBand" id="pokedex">
+        <div id="top"></div>
+        <div id="interface">
+            <ul id="lista">
 
+            </ul>
         </div>
-        <div>
-
-        </div>
-        <ul id="lista">
-
-        </ul>
+        <div id="bottom"></div>
     </div>
-    
+
     <script src="./js/model.js"></script>
     <script src="./js/controller.js"></script>
     <script src="./js/view.js"></script>
