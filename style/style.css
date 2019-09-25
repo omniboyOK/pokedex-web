@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+#pokedex {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border-radius: 2px solid red;
+    background-color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    font-weight: bold;
+}
