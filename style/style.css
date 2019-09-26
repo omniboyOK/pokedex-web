@@ -1,64 +1,346 @@
-body {
-  box-sizing: border-box;
-  background-color: black;
-  overflow: hidden;
-  height: 100vh;
+html, body {width: 100%; height: 100%;}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-image: url(../img/back.jpg);
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  #wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  #turnOn {
+    display: none;
+  }
+
+  #menu {
+    align-self: center;
+    justify-self: center;
+    transition: height 2s;
+  }
+
+  #menu input {
+    height: 50px;
+    border: none;
+    box-shadow: none;
+    background-color: rgb(122, 179, 229, 0.8);
+  }
+
+  #pokedex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: height 2s;
+  }
+
+  #pokedex.loading {
+    height: 60%;
+  }
+
+  #pokedex #top {
+    position: absolute;
+    align-self: center;
+    top: 0;
+    height: 140px;
+    width: 100%;
+    background-size: 100% 100%;
+    background-image: url(../img/pokedex/top.png);
+    background-repeat: no-repeat;
+    z-index: 3;
+  }
+
+  #pokedex #bottom {
+    position: absolute;
+    align-self: center;
+    bottom: 0;
+    height: 140px;
+    width: 100%;
+    background-size: 100% 100%;
+    background-image: url(../img/pokedex/bottom.png);
+    background-repeat: no-repeat;
+    z-index: 3;
+  }
+
+  #pokedex #interface {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    border: 2px rgb(122, 179, 229) solid;
+    background-color: rgb(122, 179, 229, 0.5);
+    z-index: 2;
+    transition: height 2s;
+  }
+
+  #pokedex #load {
+    height: 50%;
+    align-self: center;
+    transition: height 2s;
+  }
+
+  #lista {
+    height: 100%;
+    list-style: none;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  #lista .item {
+    text-align: center;
+  }
 }
 
-#pokedex {
-  display: flex;
-  flex-direction: column;
-  width: 480px;
-  height: 600px;
+/*****************************************************************************/
+/*****************CSS PARA WEB************************************************/
+/*****************************************************************************/
+@media screen and (min-width: 600px) {
+  body {
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100vh;
+    background-image: url(../img/back.jpg);
+    background-size: cover;
+  }
 
+  #turnOn {
+    align-self: center;
+  }
+
+  #wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  #menu {
+    align-self: center;
+    justify-self: center;
+    transition: height 2s;
+  }
+
+  #pokedex {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 95%;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    transition: height 2s;
+  }
+
+  #pokedex.loading {
+    height: 70%;
+  }
+
+  #pokedex #top {
+    position: absolute;
+    top: 0;
+    height: 210px;
+    width: 480px;
+    background-size: 99% 100%;
+    background-image: url(../img/pokedex/top.png);
+    background-repeat: no-repeat;
+    z-index: 3;
+  }
+
+  #pokedex #bottom {
+    position: absolute;
+    bottom: 0;
+    height: 210px;
+    width: 100%;
+    background-size: 99% 100%;
+    background-image: url(../img/pokedex/bottom.png);
+    background-repeat: no-repeat;
+    z-index: 3;
+  }
+
+  #pokedex #interface {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+
+    width: 460px;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    border: 2px rgb(122, 179, 229) solid;
+    background-color: rgb(122, 179, 229, 0.5);
+    z-index: 2;
+    transition: height 2s;
+  }
+
+  #pokedex #load {
+    align-self: center;
+    padding-bottom: 20px;
+    transition: height 2s;
+  }
+
+  #lista {
+    height: 100%;
+    list-style: none;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  #lista .item {
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+@keyframes lds-spin {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes lds-spin {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+.lds-spin {
+  position: relative;
+}
+.lds-spin div > div {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-
-  max-width: 100%;
-  max-height: 100%;
-  overflow: hidden;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f65e49;
+  -webkit-animation: lds-spin 1s linear infinite;
+  animation: lds-spin 1s linear infinite;
 }
-
-#pokedex #top {
-  position: absolute;
-  top: 0;
-  height: 245px;
-  width: 480px;
-  background-size: 100%;
-  background-image: url(../img/pokedex/top.png);
-  background-repeat: no-repeat;
-  z-index: 3;
+.lds-spin div:nth-child(1) > div {
+  left: 138px;
+  top: 78px;
+  -webkit-animation-delay: -0.833333333333333s;
+  animation-delay: -0.833333333333333s;
 }
-
-#pokedex #bottom {
-  position: absolute;
-  bottom: 0;
-  height: 245px;
-  width: 100%;
-  background-size: 100%;
-  background-image: url(../img/pokedex/bottom.png);
-  background-repeat: no-repeat;
-  z-index: 3;
+.lds-spin > div:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transform-origin: 160px 100px;
+  transform-origin: 160px 100px;
 }
-
-#pokedex #interface {
-margin-top: 10%;
-  align-self: center;
-  width: 460px;
-  height: 80%;
-  border: 2px rgb(122, 179, 229) solid;
-  background-color: rgb(122, 179, 229, 0.5);
-  z-index: 2;
+.lds-spin div:nth-child(2) > div {
+  left: 108px;
+  top: 129.96152424000002px;
+  -webkit-animation-delay: -0.666666666666667s;
+  animation-delay: -0.666666666666667s;
 }
-
-ul {
-  list-style: none;
+.lds-spin > div:nth-child(2) {
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
+  -webkit-transform-origin: 130px 151.96152424000002px;
+  transform-origin: 130px 151.96152424000002px;
 }
-
-ul li {
-  font-weight: bold;
+.lds-spin div:nth-child(3) > div {
+  left: 48px;
+  top: 129.96152424000002px;
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+.lds-spin > div:nth-child(3) {
+  -webkit-transform: rotate(120deg);
+  transform: rotate(120deg);
+  -webkit-transform-origin: 70px 151.96152424000002px;
+  transform-origin: 70px 151.96152424000002px;
+}
+.lds-spin div:nth-child(4) > div {
+  left: 18px;
+  top: 78px;
+  -webkit-animation-delay: -0.333333333333333s;
+  animation-delay: -0.333333333333333s;
+}
+.lds-spin > div:nth-child(4) {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transform-origin: 40px 100px;
+  transform-origin: 40px 100px;
+}
+.lds-spin div:nth-child(5) > div {
+  left: 48px;
+  top: 26.038475759999997px;
+  -webkit-animation-delay: -0.166666666666667s;
+  animation-delay: -0.166666666666667s;
+}
+.lds-spin > div:nth-child(5) {
+  -webkit-transform: rotate(240deg);
+  transform: rotate(240deg);
+  -webkit-transform-origin: 70px 48.03847576px;
+  transform-origin: 70px 48.03847576px;
+}
+.lds-spin div:nth-child(6) > div {
+  left: 108px;
+  top: 26.038475759999997px;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.lds-spin > div:nth-child(6) {
+  -webkit-transform: rotate(300deg);
+  transform: rotate(300deg);
+  -webkit-transform-origin: 130px 48.03847576px;
+  transform-origin: 130px 48.03847576px;
+}
+.lds-spin div:nth-child(7) > div {
+  left: 138px;
+  top: 78px;
+  -webkit-animation-delay: 0.166666666666667s;
+  animation-delay: 0.166666666666667s;
+}
+.lds-spin > div:nth-child(7) {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transform-origin: 160px 100px;
+  transform-origin: 160px 100px;
+}
+.lds-spin {
+  width: 160px !important;
+  height: 160px !important;
+  -webkit-transform: translate(-80px, -80px) scale(0.8) translate(80px, 80px);
+  transform: translate(-80px, -80px) scale(0.8) translate(80px, 80px);
 }
