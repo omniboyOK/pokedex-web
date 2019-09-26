@@ -40,35 +40,42 @@ class View {
     $("#lista").hide();
     $("#load").hide();
     $("#menu").hide();
-    console.log(pokemon)
+    console.log(pokemon);
     const profile = $("#profile");
-    profile.html('');
+    profile.html("");
     //esta variable chequea que exista otro item Type en la lista
     const type2 = pokemon.types[1] ? pokemon.types[1].type.name : "";
     const content = $(`
     <div class="ui grid basic segment">
         <div class="ui seven wide column">
-            <img src="${pokemon.sprites.front_default}" alt="">
-            <div class="ui label">${pokemon.types[0].type.name}</div>
-            <div class="ui label">${type2}</div>
+          <img class="ui big image" src="${pokemon.sprites.front_default}" alt="">
+          <div class="ui basic blue label">${pokemon.types[0].type.name}
+            <div class="detail">${type2}</div>
+          </div>
         </div>
         <div class="ui nine wide column">
-            <div class="ui label">${pokemon.moves[0].move.name}</div>
-            <div class="ui label">${pokemon.moves[1].move.name}</div>
-            <div class="ui label">${pokemon.moves[2].move.name}</div>
-            <div class="ui label">${pokemon.moves[3].move.name}</div>
+          <h1>Moveset</h1>
+          <div class="ui inverted blue relaxed divided list">
+            <div class="item">${pokemon.moves[0].move.name}</div>
+            <div class="item">${pokemon.moves[1].move.name}</div>
+            <div class="item">${pokemon.moves[2].move.name}</div>
+            <div class="item">${pokemon.moves[3].move.name}</div>
+          </div>
         </div>
     </div>
     `);
     const cancel = $(`
-    <button class="ui red basic button" id="back_button">
-    <i class="ui red cancel icon"></i>
+    <button class="ui red button" id="back_button">
+    <i class="ui cancel icon"></i>
     </button>`);
-    cancel.click(()=>{
-      app.view.showContent()
+    cancel.click(() => {
+      app.view.showContent();
     });
     content.append(cancel);
-    profile.append(content).hide().fadeIn(1000)
+    profile
+      .append(content)
+      .hide()
+      .fadeIn(1000);
   }
 
   drawList(list, controller) {
@@ -107,7 +114,7 @@ class View {
     $("#load").hide();
     $("#profile").fadeIn();
     $("#pokedex").removeClass("loading");
-  }
+  };
 
   turnOnPokedex = () => {
     $("#pokedex").removeClass("loading");

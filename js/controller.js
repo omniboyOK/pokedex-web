@@ -66,6 +66,6 @@ class Controller {
     setTimeout(() => {
       this.view.drawList(this.model.pokemonList, this);
       this.view.showContent();
-    }, 2000);
+    }, 1500);
   }
 }
