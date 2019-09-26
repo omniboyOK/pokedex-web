@@ -31,6 +31,10 @@ body {
     animation-iteration-count: infinite;
   }
 
+  #back_button i {
+    margin: 5px;
+  }
+
   #turnOn.disabled {
     pointer-events: none;
     color: grey;
@@ -133,6 +137,30 @@ body {
   #lista .item {
     text-align: center;
   }
+
+  #profile {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #profile .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #profile .column .label {
+    width: 50%;
+    min-height: 20px;
+    font-size: 14px;
+    margin: 5px;
+  }
+
+  #profile #back_button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 /*****************************************************************************/
@@ -160,6 +188,10 @@ body {
   }
 
   #turnOn i {
+    margin: 5px;
+  }
+
+  #back_button i {
     margin: 5px;
   }
 
@@ -269,6 +301,30 @@ body {
   #lista .item {
     text-align: center;
     cursor: pointer;
+  }
+
+  #profile {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #profile .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #profile .column .label {
+    width: 50%;
+    min-height: 20px;
+    font-size: 14px;
+    margin: 5px;
+  }
+
+  #profile #back_button {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
 
