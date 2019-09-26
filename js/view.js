@@ -1,7 +1,10 @@
 class View {
   constructor() {
     this.$layout = $(`<div id="top"></div>
-
+    <div class="ui circular button" id="turnOn">
+    <i class="red big power off icon"></i>
+    </button>
+    </div>
     <div class="" id="interface">
         <div id="menu">
         <div class="ui basic button" id="prev"><<</div>
