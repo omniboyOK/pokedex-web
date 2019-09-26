@@ -75,7 +75,7 @@ body {
   }
 
   #pokedex.loading {
-    height: 60%;
+    height: 80%;
   }
 
   #pokedex #top {
@@ -118,6 +118,15 @@ body {
     background-color: rgb(122, 179, 229, 0.5);
     z-index: 2;
     transition: height 2s;
+    border: 1.5px rgb(122, 179, 229) solid;
+    background-color: rgb(122, 179, 229, 0.5);
+    background-image: url("../img/transmisor.png");
+    z-index: 2;
+    transition: height 2s;
+    box-shadow: 0 8px 10px 0 rgba(122, 179, 229, 0.8),
+      0 6px 8px 0 rgba(0, 0, 0, 0.19);
+
+      animation: transmisor 7s linear infinite;
   }
 
   #load {
@@ -140,7 +149,10 @@ body {
 
   #profile {
     height: 100%;
-    overflow: hidden;
+    height: 100%;
+    list-style: none;
+    overflow: scroll;
+    overflow-x: hidden;
   }
 
   #profile .column {
@@ -170,9 +182,9 @@ body {
   body {
     box-sizing: border-box;
     overflow: hidden;
-    height: 100vh;
     background-color: #7f78d2;
     background-size: cover;
+    max-height: 960px;
   }
 
   #turnOn {
@@ -243,7 +255,7 @@ body {
     position: absolute;
     top: 0;
     height: 210px;
-    width: 480px;
+    width: 100%;
     background-size: 99% 100%;
     background-image: url(../img/pokedex/top.png);
     background-repeat: no-repeat;
