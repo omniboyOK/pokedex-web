@@ -13,6 +13,22 @@ class Controller {
     this.view.startLoading();
   }
 
+  getSelectedPokemon(model, url) {
+    this.view.startLoading();
+    $.ajax({
+      url: url,
+      success: function(response) {
+        var list = response;
+        model.currentPokemon = list;
+        console.log(url);
+      }
+    });
+    setTimeout(() => {
+      this.view.renderProfile(this.model.currentPokemon);
+      this.view.showProfile();
+    }, 2000);
+  }
+
   getPokemonAPI(model) {
     $.ajax({
       url: "https://pokeapi.co/api/v2/pokemon",
@@ -48,7 +64,7 @@ class Controller {
   getList() {
     this.view.startLoading();
     setTimeout(() => {
-      this.view.drawList(this.model.pokemonList);
+      this.view.drawList(this.model.pokemonList, this);
       this.view.showContent();
     }, 2000);
   }

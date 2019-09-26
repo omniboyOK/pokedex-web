@@ -17,12 +17,28 @@ body {
   }
 
   #turnOn {
+    padding: 0;
+    height: 40px;
+    width: 40px;
     position: absolute;
     top: 10px;
     align-self: center;
     z-index: 4;
     text-align: center;
-    size: 40%;
+    animation-name: bright;
+    animation-duration: 5s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+  }
+
+  #turnOn.disabled {
+    pointer-events: none;
+    color: grey;
+    box-shadow: none;
+  }
+
+  #turnOn i{
+    margin: 5px;
   }
 
   #menu {
@@ -62,7 +78,7 @@ body {
     position: absolute;
     align-self: center;
     top: 0;
-    height: 140px;
+    height: 160px;
     width: 100%;
     background-size: 100% 100%;
     background-image: url(../img/pokedex/top.png);
@@ -74,7 +90,7 @@ body {
     position: absolute;
     align-self: center;
     bottom: 0;
-    height: 140px;
+    height: 160px;
     width: 100%;
     background-size: 100% 100%;
     background-image: url(../img/pokedex/bottom.png);
@@ -90,18 +106,19 @@ body {
 
     width: 98%;
     height: 100%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding-top: 90px;
-    padding-bottom: 90px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 130px;
+    padding-bottom: 130px;
     border: 2px rgb(122, 179, 229) solid;
     background-color: rgb(122, 179, 229, 0.5);
     z-index: 2;
     transition: height 2s;
   }
 
-  #pokedex #load {
-    height: 50%;
+  #load {
+    position: absolute;
+    top: 33%;
     align-self: center;
     transition: height 2s;
   }
@@ -140,6 +157,16 @@ body {
     animation-duration: 5s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
+  }
+
+  #turnOn i {
+    margin: 5px;
+  }
+
+  #turnOn.disabled {
+    pointer-events: none;
+    color: grey;
+    box-shadow: none;
   }
 
   #wrapper {
