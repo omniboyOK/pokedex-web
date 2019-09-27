@@ -35,13 +35,18 @@ body {
     margin: 5px;
   }
 
+  .button {
+    box-shadow: 0 1px 10px 0 rgba(122, 179, 229, 0.8),
+      0 1px 3px 0 rgba(0, 0, 0, 0.19) !important;
+  }
+
   #turnOn.disabled {
     pointer-events: none;
     color: grey;
     box-shadow: none;
   }
 
-  #turnOn i{
+  #turnOn i {
     margin: 5px;
   }
 
@@ -126,7 +131,7 @@ body {
     box-shadow: 0 8px 10px 0 rgba(122, 179, 229, 0.8),
       0 6px 8px 0 rgba(0, 0, 0, 0.19);
 
-      animation: transmisor 7s linear infinite;
+    animation: transmisor 7s linear infinite;
   }
 
   #load {
@@ -145,6 +150,8 @@ body {
 
   #lista .item {
     text-align: center;
+    text-shadow: 0 8px 10px 0 rgba(122, 179, 229, 0.8),
+      0 6px 8px 0 rgba(0, 0, 0, 0.19);
   }
 
   #profile {
@@ -205,6 +212,11 @@ body {
 
   #back_button i {
     margin: 5px;
+  }
+
+  .button {
+    box-shadow: 0 1px 10px 0 rgba(122, 179, 229, 0.8),
+      0 1px 3px 0 rgba(0, 0, 0, 0.19) !important;
   }
 
   #turnOn.disabled {
@@ -293,7 +305,7 @@ body {
     box-shadow: 0 8px 10px 0 rgba(122, 179, 229, 0.8),
       0 6px 8px 0 rgba(0, 0, 0, 0.19);
 
-      animation: transmisor 7s linear infinite;
+    animation: transmisor 7s linear infinite;
   }
 
   #load {
@@ -313,6 +325,7 @@ body {
   #lista .item {
     text-align: center;
     cursor: pointer;
+    text-shadow: #7f78d2;
   }
 
   #profile {

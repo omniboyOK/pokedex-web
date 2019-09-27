@@ -7,9 +7,9 @@ class View {
     </div>
     <div class="" id="interface">
         <div id="menu">
-        <div class="ui basic button" id="prev"><<</div>
+        <div class="ui basic button" id="prev"><i class="ui angle left icon"></i></div>
         <div class="ui basic button" id="search">Ver Datos</div>
-        <div class="ui basic button" id="next">>></div>
+        <div class="ui basic button" id="next"><i class="ui angle right icon"></i></div>
         </div>
 
         <div class="ui inverted blue relaxed divided list" id="lista">
